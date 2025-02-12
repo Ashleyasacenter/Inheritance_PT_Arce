@@ -1,0 +1,102 @@
+<?php
+class Product {
+    protected $name;
+    protected $price;
+    protected $category;
+
+    public function __construct($name, $price, $category) {
+        $this->name = $name;
+        $this->price = $price;
+        $this->category = $category;
+    }
+
+    public function getDetails() {
+        return "Name: $this->name, Price: $$this->price, Category: $this->category";
+    }
+}
+
+
+
+
+
+
+class Electronics extends Product {
+    private $warrantyPeriod;
+
+    public function __construct($name, $price, $category, $warrantyPeriod) {
+        parent::__construct($name, $price, $category);
+        $this->warrantyPeriod = $warrantyPeriod;
+    }
+
+    public function getDetails() {
+        return parent::getDetails() . ", Warranty: $this->warrantyPeriod years";
+    }
+}
+
+
+
+
+
+
+
+class Food extends Product {
+    private $expirationDate;
+
+    public function __construct($name, $price, $category, $expirationDate) {
+        parent::__construct($name, $price, $category);
+        $this->expirationDate = $expirationDate;
+    }
+
+    public function getDetails() {
+        return parent::getDetails() . ", Expiration Date: $this->expirationDate";
+    }
+}
+
+
+
+
+
+
+class Clothe extends Product {
+    private $size;
+    private $material;
+
+    public function __construct($name, $price, $category, $size, $material) {
+        parent::__construct($name, $price, $category);
+        $this->size = $size;
+        $this->material = $material;
+    }
+
+    public function getDetails() {
+        return parent::getDetails() . ", Size: $this->size, Material: $this->material";
+    }
+}
+
+
+
+
+
+$electronic = new Electronics("Smartphone", 999, "Electronics", 2);
+$food = new Food("Bread", 2.5, "Food", "2025-05-01");
+$clothe = new Clothe("T-Shirt", 20, "Clothing", "L", "Cotton");
+
+echo $electronic->getDetails() ."<br>";
+echo $food->getDetails() ."<br>" ;
+echo $clothe->getDetails() ."<br>"."<br>";
+
+$electronic = new Electronics("TV", 5000, "Electronics", 2);
+$food = new Food("Icecream", 2.5, "Food", "2025-13-02");
+$clothe = new Clothe("Top", 20, "Clothing", "S", "Cotton");
+
+echo $electronic->getDetails() ."<br>";
+echo $food->getDetails() ."<br>";
+echo $clothe->getDetails() ."<br>" ."<br>";
+
+$electronic = new Electronics("Computer", 80000, "Electronics", 2);
+$food = new Food("Cake", 13, "Food", "2025-06-01");
+$clothe = new Clothe("Polo-shirt", 20, "Clothing", "S", "Cotton");
+
+echo $electronic->getDetails() . "<br>";
+echo $food->getDetails() . "<br>";
+echo $clothe->getDetails() . "<br>"."<br>";
+?>
