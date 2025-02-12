@@ -1,0 +1,26 @@
+<?php
+
+$electronic = new Electronics("Smartphone", 999, "Electronics", 2);
+$food = new Food("Bread", 2.5, "Food", "2025-05-01");
+$clothe = new Clothe("T-Shirt", 20, "Clothing", "L", "Cotton");
+
+echo $electronic->getDetails() ."<br>";
+echo $food->getDetails() ."<br>" ;
+echo $clothe->getDetails() ."<br>"."<br>";
+
+$electronic = new Electronics("TV", 5000, "Electronics", 2);
+$food = new Food("Icecream", 2.5, "Food", "2025-13-02");
+$clothe = new Clothe("Top", 20, "Clothing", "S", "Cotton");
+
+echo $electronic->getDetails() ."<br>";
+echo $food->getDetails() ."<br>";
+echo $clothe->getDetails() ."<br>" ."<br>";
+
+$electronic = new Electronics("Computer", 80000, "Electronics", 2);
+$food = new Food("Cake", 13, "Food", "2025-06-01");
+$clothe = new Clothe("Polo-shirt", 20, "Clothing", "S", "Cotton");
+
+echo $electronic->getDetails() . "<br>";
+echo $food->getDetails() . "<br>";
+echo $clothe->getDetails() . "<br>"."<br>";
+?>
